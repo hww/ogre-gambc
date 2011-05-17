@@ -35,7 +35,7 @@ This source file is part of the
 #include <SdkCameraMan.h>
 
 #include "../ogreapi/OgreConsole.h"
-#include "../dbg/DebugDrawManager.h"
+//#include "../dbg/DebugDrawManager.h"
 
 class BaseApplication : public Ogre::FrameListener, public Ogre::WindowEventListener, public OIS::KeyListener, public OIS::MouseListener, OgreBites::SdkTrayListener
 {

@@ -17,11 +17,11 @@ This source file is part of the
 #include "Game.h"
 
 //-------------------------------------------------------------------------------------
-UFOGame::Game(void)
+Game::Game(void)
 {
 }
 //-------------------------------------------------------------------------------------
-UFOGame::~Game(void)
+Game::~Game(void)
 {
 }
 
@@ -49,7 +49,7 @@ extern "C" {
 #endif
     {
         // Create application object
-        UFOGame app;
+        Game app;
 
         try {
             app.go();

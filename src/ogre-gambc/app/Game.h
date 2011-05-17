@@ -14,19 +14,19 @@ This source file is part of the
       http://www.ogre3d.org/tikiwiki/
 -----------------------------------------------------------------------------
 */
-#ifndef __UFOGame_h_
-#define __UFOGame_h_
+#ifndef __Game_h_
+#define __Game_h_
 
 #include "BaseApplication.h"
 
-class UFOGame : public BaseApplication
+class Game : public BaseApplication
 {
 public:
-    UFOGame(void);
-    virtual ~UFOGame(void);
+    Game(void);
+    virtual ~Game(void);
 
 protected:
     virtual void createScene(void);
 };
 
-#endif // #ifndef __UFOGame_h_
+#endif // #ifndef __Game_h_

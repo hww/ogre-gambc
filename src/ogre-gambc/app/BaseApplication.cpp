@@ -214,13 +214,13 @@ void BaseApplication::go(void)
 
     mConsole->init( mRoot );
 
-    new DebugDrawManager(mSceneMgr);
-//    ::g_DebugDrawManager.Init(mSceneMgr);
+    //new DebugDrawManager(mSceneMgr);
+    //old! ::g_DebugDrawManager.Init(mSceneMgr);
 
     mRoot->startRendering();
 
-    delete(DebugDrawManager::getSingletonPtr());
-    // ::g_DebugDrawManager.DeInit();
+    //delete(DebugDrawManager::getSingletonPtr());
+    //old! ::g_DebugDrawManager.DeInit();
 
     // clean up
     destroyScene();
@@ -292,10 +292,10 @@ bool BaseApplication::frameStarted(const Ogre::FrameEvent& evt)
 {
     float dtime = evt.timeSinceLastFrame;
 
-    DebugDrawManager::getSingleton().DebugDraw();
-    DebugDrawManager::getSingleton().Draw(dtime, mCamera);
-//::g_DebugDrawManager.DebugDraw();
-//    ::g_DebugDrawManager.Draw(dtime);
+    //DebugDrawManager::getSingleton().DebugDraw();
+    //DebugDrawManager::getSingleton().Draw(dtime, mCamera);
+    //old! ::g_DebugDrawManager.DebugDraw();
+    //old! ::g_DebugDrawManager.Draw(dtime);
     return true;
 }
 //-------------------------------------------------------------------------------------
