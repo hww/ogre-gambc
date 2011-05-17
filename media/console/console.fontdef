@@ -1,0 +1,8 @@
+Console
+{
+	type 		truetype
+	source 		FixedsysTTF.ttf
+//	source 		consolab.ttf
+	size 		32
+	resolution 	55
+}

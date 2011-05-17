@@ -1,0 +1,13 @@
+material debug/vertex_color_lines
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            scene_blend alpha_blend
+	    ambient vertexcolour
+            depth_check off
+        }
+    }
+}
