@@ -2,7 +2,7 @@
 
 The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language.
 
-    [[[[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page]]][Gambit-C Site]]
+[[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page][Gambit-C Wiki]]
 
 This project is not a complette ogre to gambit-c binding. It is just an example how to complie the ogre with the scheme REPL
 
