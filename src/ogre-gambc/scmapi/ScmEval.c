@@ -1,0 +1,1312 @@
+#ifdef ___LINKER_INFO
+; File: "ScmEval.c", produced by Gambit-C v4.6.0
+(
+406000
+" ScmEval"
+(" ScmEval")
+(
+"##define"
+"##lambda"
+"##quote"
+"##repl-debug-main"
+"catch-all-errors"
+"eval"
+"exc"
+"lambda"
+"obj"
+"quote"
+"read"
+"read-from-string"
+"source1"
+"str"
+"thunk"
+"with-exception-catcher"
+"with-input-from-string"
+"with-output-to-string"
+"write"
+"write-to-string"
+)
+(
+)
+(
+" ScmEval"
+"catch-all-errors"
+"read-from-string"
+"write-to-string"
+)
+(
+"scm-eval-string"
+"scm-start-repl"
+)
+(
+"##repl-debug-main"
+"eval"
+"read"
+"with-exception-catcher"
+"with-input-from-string"
+"with-output-to-string"
+"write"
+)
+ #f
+)
+#else
+#define ___VERSION 406000
+#define ___MODULE_NAME " ScmEval"
+#define ___LINKER_ID ____20_ScmEval
+#define ___MH_PROC ___H__20_ScmEval
+#define ___SCRIPT_LINE 0
+#define ___SYM_COUNT 20
+#define ___GLO_COUNT 13
+#define ___SUP_COUNT 6
+#define ___CNS_COUNT 62
+#define ___SUB_COUNT 116
+#define ___LBL_COUNT 28
+#include "gambit.h"
+
+___NEED_SYM(___S__23__23_define)
+___NEED_SYM(___S__23__23_lambda)
+___NEED_SYM(___S__23__23_quote)
+___NEED_SYM(___S__23__23_repl_2d_debug_2d_main)
+___NEED_SYM(___S_catch_2d_all_2d_errors)
+___NEED_SYM(___S_eval)
+___NEED_SYM(___S_exc)
+___NEED_SYM(___S_lambda)
+___NEED_SYM(___S_obj)
+___NEED_SYM(___S_quote)
+___NEED_SYM(___S_read)
+___NEED_SYM(___S_read_2d_from_2d_string)
+___NEED_SYM(___S_source1)
+___NEED_SYM(___S_str)
+___NEED_SYM(___S_thunk)
+___NEED_SYM(___S_with_2d_exception_2d_catcher)
+___NEED_SYM(___S_with_2d_input_2d_from_2d_string)
+___NEED_SYM(___S_with_2d_output_2d_to_2d_string)
+___NEED_SYM(___S_write)
+___NEED_SYM(___S_write_2d_to_2d_string)
+
+___NEED_GLO(___G__20_ScmEval)
+___NEED_GLO(___G__23__23_repl_2d_debug_2d_main)
+___NEED_GLO(___G_catch_2d_all_2d_errors)
+___NEED_GLO(___G_eval)
+___NEED_GLO(___G_read)
+___NEED_GLO(___G_read_2d_from_2d_string)
+___NEED_GLO(___G_scm_2d_eval_2d_string)
+___NEED_GLO(___G_scm_2d_start_2d_repl)
+___NEED_GLO(___G_with_2d_exception_2d_catcher)
+___NEED_GLO(___G_with_2d_input_2d_from_2d_string)
+___NEED_GLO(___G_with_2d_output_2d_to_2d_string)
+___NEED_GLO(___G_write)
+___NEED_GLO(___G_write_2d_to_2d_string)
+
+___BEGIN_SYM1
+___DEF_SYM1(0,___S__23__23_define,"##define")
+___DEF_SYM1(1,___S__23__23_lambda,"##lambda")
+___DEF_SYM1(2,___S__23__23_quote,"##quote")
+___DEF_SYM1(3,___S__23__23_repl_2d_debug_2d_main,"##repl-debug-main")
+___DEF_SYM1(4,___S_catch_2d_all_2d_errors,"catch-all-errors")
+___DEF_SYM1(5,___S_eval,"eval")
+___DEF_SYM1(6,___S_exc,"exc")
+___DEF_SYM1(7,___S_lambda,"lambda")
+___DEF_SYM1(8,___S_obj,"obj")
+___DEF_SYM1(9,___S_quote,"quote")
+___DEF_SYM1(10,___S_read,"read")
+___DEF_SYM1(11,___S_read_2d_from_2d_string,"read-from-string")
+___DEF_SYM1(12,___S_source1,"source1")
+___DEF_SYM1(13,___S_str,"str")
+___DEF_SYM1(14,___S_thunk,"thunk")
+___DEF_SYM1(15,___S_with_2d_exception_2d_catcher,"with-exception-catcher")
+___DEF_SYM1(16,___S_with_2d_input_2d_from_2d_string,"with-input-from-string")
+___DEF_SYM1(17,___S_with_2d_output_2d_to_2d_string,"with-output-to-string")
+___DEF_SYM1(18,___S_write,"write")
+___DEF_SYM1(19,___S_write_2d_to_2d_string,"write-to-string")
+___END_SYM1
+
+___BEGIN_GLO
+___DEF_GLO(0," ScmEval")
+___DEF_GLO(1,"catch-all-errors")
+___DEF_GLO(2,"read-from-string")
+___DEF_GLO(3,"scm-eval-string")
+___DEF_GLO(4,"scm-start-repl")
+___DEF_GLO(5,"write-to-string")
+___DEF_GLO(6,"##repl-debug-main")
+___DEF_GLO(7,"eval")
+___DEF_GLO(8,"read")
+___DEF_GLO(9,"with-exception-catcher")
+___DEF_GLO(10,"with-input-from-string")
+___DEF_GLO(11,"with-output-to-string")
+___DEF_GLO(12,"write")
+___END_GLO
+
+___BEGIN_CNS
+ ___DEF_CNS(___REF_SUB(5),___REF_CNS(1))
+,___DEF_CNS(___REF_SUB(7),___REF_CNS(4))
+,___DEF_CNS(___REF_SUB(8),___REF_CNS(3))
+,___DEF_CNS(___REF_SUB(9),___REF_NUL)
+,___DEF_CNS(___REF_SUB(10),___REF_NUL)
+,___DEF_CNS(___REF_SUB(11),___REF_CNS(6))
+,___DEF_CNS(___REF_SUB(12),___REF_CNS(13))
+,___DEF_CNS(___REF_SUB(13),___REF_CNS(8))
+,___DEF_CNS(___REF_SUB(14),___REF_CNS(10))
+,___DEF_CNS(___REF_SUB(15),___REF_NUL)
+,___DEF_CNS(___REF_SUB(16),___REF_NUL)
+,___DEF_CNS(___REF_SUB(17),___REF_CNS(12))
+,___DEF_CNS(___REF_SUB(18),___REF_NUL)
+,___DEF_CNS(___REF_SUB(19),___REF_NUL)
+,___DEF_CNS(___REF_SUB(25),___REF_CNS(15))
+,___DEF_CNS(___REF_SUB(26),___REF_CNS(4))
+,___DEF_CNS(___REF_SUB(30),___REF_CNS(8))
+,___DEF_CNS(___REF_SUB(37),___REF_CNS(18))
+,___DEF_CNS(___REF_SUB(38),___REF_CNS(20))
+,___DEF_CNS(___REF_SUB(39),___REF_NUL)
+,___DEF_CNS(___REF_SUB(40),___REF_NUL)
+,___DEF_CNS(___REF_SUB(41),___REF_CNS(22))
+,___DEF_CNS(___REF_SUB(42),___REF_CNS(25))
+,___DEF_CNS(___REF_SUB(43),___REF_CNS(24))
+,___DEF_CNS(___REF_SUB(44),___REF_NUL)
+,___DEF_CNS(___REF_SUB(45),___REF_NUL)
+,___DEF_CNS(___REF_SUB(46),___REF_CNS(27))
+,___DEF_CNS(___REF_SUB(47),___REF_CNS(28))
+,___DEF_CNS(___REF_SUB(48),___REF_NUL)
+,___DEF_CNS(___REF_SUB(49),___REF_CNS(30))
+,___DEF_CNS(___REF_SUB(50),___REF_NUL)
+,___DEF_CNS(___REF_SUB(53),___REF_CNS(24))
+,___DEF_CNS(___REF_SUB(57),___REF_CNS(27))
+,___DEF_CNS(___REF_SUB(64),___REF_CNS(34))
+,___DEF_CNS(___REF_SUB(65),___REF_CNS(36))
+,___DEF_CNS(___REF_SUB(66),___REF_NUL)
+,___DEF_CNS(___REF_SUB(67),___REF_NUL)
+,___DEF_CNS(___REF_SUB(68),___REF_CNS(38))
+,___DEF_CNS(___REF_SUB(69),___REF_CNS(39))
+,___DEF_CNS(___REF_SUB(70),___REF_NUL)
+,___DEF_CNS(___REF_SUB(77),___REF_CNS(41))
+,___DEF_CNS(___REF_SUB(78),___REF_CNS(43))
+,___DEF_CNS(___REF_SUB(79),___REF_NUL)
+,___DEF_CNS(___REF_SUB(80),___REF_CNS(44))
+,___DEF_CNS(___REF_SUB(82),___REF_NUL)
+,___DEF_CNS(___REF_SUB(83),___REF_CNS(46))
+,___DEF_CNS(___REF_SUB(84),___REF_NUL)
+,___DEF_CNS(___REF_SUB(85),___REF_CNS(48))
+,___DEF_CNS(___REF_SUB(86),___REF_CNS(49))
+,___DEF_CNS(___REF_SUB(87),___REF_NUL)
+,___DEF_CNS(___REF_SUB(88),___REF_CNS(51))
+,___DEF_CNS(___REF_SUB(89),___REF_NUL)
+,___DEF_CNS(___REF_SUB(90),___REF_CNS(53))
+,___DEF_CNS(___REF_SUB(91),___REF_NUL)
+,___DEF_CNS(___REF_SUB(92),___REF_CNS(55))
+,___DEF_CNS(___REF_SUB(93),___REF_NUL)
+,___DEF_CNS(___REF_SUB(96),___REF_CNS(48))
+,___DEF_CNS(___REF_SUB(108),___REF_CNS(58))
+,___DEF_CNS(___REF_SUB(109),___REF_CNS(59))
+,___DEF_CNS(___REF_SUB(110),___REF_CNS(60))
+,___DEF_CNS(___REF_SUB(112),___REF_NUL)
+,___DEF_CNS(___REF_SUB(113),___REF_NUL)
+___END_CNS
+
+___DEF_SUB_VEC(___X0,2)
+               ___VEC1(___REF_SUB(1))
+               ___VEC1(___REF_SUB(20))
+               ___VEC0
+___DEF_SUB_VEC(___X1,1)
+               ___VEC1(___REF_SUB(2))
+               ___VEC0
+___DEF_SUB_VEC(___X2,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(3))
+               ___VEC0
+___DEF_SUB_VEC(___X3,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(0))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(12))
+               ___VEC0
+___DEF_SUB_VEC(___X4,1)
+               ___VEC1(___REF_SYM(12,___S_source1))
+               ___VEC0
+___DEF_SUB_VEC(___X5,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(0,___S__23__23_define))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(12))
+               ___VEC0
+___DEF_SUB_STR(___X6,66)
+               ___STR8(47,104,111,109,101,47,118,97)
+               ___STR8(108,101,114,121,47,80,114,111)
+               ___STR8(106,101,99,116,115,47,112,108)
+               ___STR8(97,110,101,116,47,116,114,117)
+               ___STR8(110,107,47,115,114,99,47,103)
+               ___STR8(97,109,98,99,97,112,112,47)
+               ___STR8(115,99,109,97,112,105,47,83)
+               ___STR8(99,109,69,118,97,108,46,115)
+               ___STR2(99,109)
+___DEF_SUB_VEC(___X7,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(2))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(524300))
+               ___VEC0
+___DEF_SUB_VEC(___X8,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(4,___S_catch_2d_all_2d_errors))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(589836))
+               ___VEC0
+___DEF_SUB_VEC(___X9,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(14,___S_thunk))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1703948))
+               ___VEC0
+___DEF_SUB_VEC(___X10,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(5))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(131085))
+               ___VEC0
+___DEF_SUB_VEC(___X11,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(15,___S_with_2d_exception_2d_catcher))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196621))
+               ___VEC0
+___DEF_SUB_VEC(___X12,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(7))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196622))
+               ___VEC0
+___DEF_SUB_VEC(___X13,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(7,___S_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262158))
+               ___VEC0
+___DEF_SUB_VEC(___X14,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(9))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(720910))
+               ___VEC0
+___DEF_SUB_VEC(___X15,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(6,___S_exc))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(786446))
+               ___VEC0
+___DEF_SUB_VEC(___X16,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(11))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(327695))
+               ___VEC0
+___DEF_SUB_VEC(___X17,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(19,___S_write_2d_to_2d_string))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(393231))
+               ___VEC0
+___DEF_SUB_VEC(___X18,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(6,___S_exc))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1441807))
+               ___VEC0
+___DEF_SUB_VEC(___X19,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(14,___S_thunk))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196624))
+               ___VEC0
+___DEF_SUB_VEC(___X20,0)
+               ___VEC0
+___DEF_SUB_VEC(___X21,2)
+               ___VEC1(___REF_SUB(22))
+               ___VEC1(___REF_SUB(32))
+               ___VEC0
+___DEF_SUB_VEC(___X22,4)
+               ___VEC1(___REF_SUB(23))
+               ___VEC1(___REF_SUB(27))
+               ___VEC1(___REF_SUB(28))
+               ___VEC1(___REF_SUB(31))
+               ___VEC0
+___DEF_SUB_VEC(___X23,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(24))
+               ___VEC0
+___DEF_SUB_VEC(___X24,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(14))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(12))
+               ___VEC0
+___DEF_SUB_VEC(___X25,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(12))
+               ___VEC0
+___DEF_SUB_VEC(___X26,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(3))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(12))
+               ___VEC0
+___DEF_SUB_VEC(___X27,2)
+               ___VEC1(___REF_FIX(1))
+               ___VEC1(___REF_SUB(19))
+               ___VEC0
+___DEF_SUB_VEC(___X28,2)
+               ___VEC1(___REF_FIX(2))
+               ___VEC1(___REF_SUB(29))
+               ___VEC0
+___DEF_SUB_VEC(___X29,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(16))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196622))
+               ___VEC0
+___DEF_SUB_VEC(___X30,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196622))
+               ___VEC0
+___DEF_SUB_VEC(___X31,3)
+               ___VEC1(___REF_FIX(3))
+               ___VEC1(___REF_SUB(29))
+               ___VEC1(___REF_FIX(65536))
+               ___VEC0
+___DEF_SUB_VEC(___X32,1)
+               ___VEC1(___REF_SYM(6,___S_exc))
+               ___VEC0
+___DEF_SUB_VEC(___X33,2)
+               ___VEC1(___REF_SUB(34))
+               ___VEC1(___REF_SUB(59))
+               ___VEC0
+___DEF_SUB_VEC(___X34,5)
+               ___VEC1(___REF_SUB(35))
+               ___VEC1(___REF_SUB(51))
+               ___VEC1(___REF_SUB(54))
+               ___VEC1(___REF_SUB(55))
+               ___VEC1(___REF_SUB(58))
+               ___VEC0
+___DEF_SUB_VEC(___X35,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(36))
+               ___VEC0
+___DEF_SUB_VEC(___X36,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(17))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(18))
+               ___VEC0
+___DEF_SUB_VEC(___X37,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(18))
+               ___VEC0
+___DEF_SUB_VEC(___X38,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(19))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(18))
+               ___VEC0
+___DEF_SUB_VEC(___X39,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(8,___S_obj))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1638418))
+               ___VEC0
+___DEF_SUB_VEC(___X40,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(21))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(131091))
+               ___VEC0
+___DEF_SUB_VEC(___X41,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(17,___S_with_2d_output_2d_to_2d_string))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196627))
+               ___VEC0
+___DEF_SUB_VEC(___X42,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(23))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262164))
+               ___VEC0
+___DEF_SUB_VEC(___X43,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(9,___S_quote))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262164))
+               ___VEC0
+___DEF_SUB_VEC(___X44,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_NUL)
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(327700))
+               ___VEC0
+___DEF_SUB_VEC(___X45,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(26))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262165))
+               ___VEC0
+___DEF_SUB_VEC(___X46,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(7,___S_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(327701))
+               ___VEC0
+___DEF_SUB_VEC(___X47,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_NUL)
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(786453))
+               ___VEC0
+___DEF_SUB_VEC(___X48,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(29))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(983061))
+               ___VEC0
+___DEF_SUB_VEC(___X49,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(18,___S_write))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1048597))
+               ___VEC0
+___DEF_SUB_VEC(___X50,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(8,___S_obj))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1441813))
+               ___VEC0
+___DEF_SUB_VEC(___X51,2)
+               ___VEC1(___REF_FIX(1))
+               ___VEC1(___REF_SUB(52))
+               ___VEC0
+___DEF_SUB_VEC(___X52,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(31))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262164))
+               ___VEC0
+___DEF_SUB_VEC(___X53,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(2,___S__23__23_quote))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262164))
+               ___VEC0
+___DEF_SUB_VEC(___X54,2)
+               ___VEC1(___REF_FIX(2))
+               ___VEC1(___REF_SUB(52))
+               ___VEC0
+___DEF_SUB_VEC(___X55,2)
+               ___VEC1(___REF_FIX(3))
+               ___VEC1(___REF_SUB(56))
+               ___VEC0
+___DEF_SUB_VEC(___X56,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(32))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262165))
+               ___VEC0
+___DEF_SUB_VEC(___X57,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262165))
+               ___VEC0
+___DEF_SUB_VEC(___X58,2)
+               ___VEC1(___REF_FIX(4))
+               ___VEC1(___REF_SUB(50))
+               ___VEC0
+___DEF_SUB_VEC(___X59,0)
+               ___VEC0
+___DEF_SUB_VEC(___X60,2)
+               ___VEC1(___REF_SUB(61))
+               ___VEC1(___REF_SUB(72))
+               ___VEC0
+___DEF_SUB_VEC(___X61,2)
+               ___VEC1(___REF_SUB(62))
+               ___VEC1(___REF_SUB(71))
+               ___VEC0
+___DEF_SUB_VEC(___X62,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(63))
+               ___VEC0
+___DEF_SUB_VEC(___X63,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(33))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(23))
+               ___VEC0
+___DEF_SUB_VEC(___X64,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(23))
+               ___VEC0
+___DEF_SUB_VEC(___X65,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(35))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(23))
+               ___VEC0
+___DEF_SUB_VEC(___X66,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(13,___S_str))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1703959))
+               ___VEC0
+___DEF_SUB_VEC(___X67,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(37))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(131096))
+               ___VEC0
+___DEF_SUB_VEC(___X68,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(16,___S_with_2d_input_2d_from_2d_string))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196632))
+               ___VEC0
+___DEF_SUB_VEC(___X69,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(13,___S_str))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1703960))
+               ___VEC0
+___DEF_SUB_VEC(___X70,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(10,___S_read))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1966104))
+               ___VEC0
+___DEF_SUB_VEC(___X71,2)
+               ___VEC1(___REF_FIX(1))
+               ___VEC1(___REF_SUB(70))
+               ___VEC0
+___DEF_SUB_VEC(___X72,0)
+               ___VEC0
+___DEF_SUB_VEC(___X73,2)
+               ___VEC1(___REF_SUB(74))
+               ___VEC1(___REF_SUB(103))
+               ___VEC0
+___DEF_SUB_VEC(___X74,8)
+               ___VEC1(___REF_SUB(75))
+               ___VEC1(___REF_SUB(94))
+               ___VEC1(___REF_SUB(97))
+               ___VEC1(___REF_SUB(98))
+               ___VEC1(___REF_SUB(99))
+               ___VEC1(___REF_SUB(100))
+               ___VEC1(___REF_SUB(101))
+               ___VEC1(___REF_SUB(102))
+               ___VEC0
+___DEF_SUB_VEC(___X75,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(76))
+               ___VEC0
+___DEF_SUB_VEC(___X76,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(40))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(33))
+               ___VEC0
+___DEF_SUB_VEC(___X77,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(33))
+               ___VEC0
+___DEF_SUB_VEC(___X78,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(42))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(33))
+               ___VEC0
+___DEF_SUB_VEC(___X79,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(13,___S_str))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1769505))
+               ___VEC0
+___DEF_SUB_VEC(___X80,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SUB(81))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(4980769))
+               ___VEC0
+___DEF_SUB_STR(___X81,6)
+               ___STR6(101,120,116,101,114,110)
+___DEF_SUB_VEC(___X82,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(45))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(131106))
+               ___VEC0
+___DEF_SUB_VEC(___X83,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(4,___S_catch_2d_all_2d_errors))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(196642))
+               ___VEC0
+___DEF_SUB_VEC(___X84,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(47))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262179))
+               ___VEC0
+___DEF_SUB_VEC(___X85,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(7,___S_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(327715))
+               ___VEC0
+___DEF_SUB_VEC(___X86,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_NUL)
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(786467))
+               ___VEC0
+___DEF_SUB_VEC(___X87,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(50))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(983075))
+               ___VEC0
+___DEF_SUB_VEC(___X88,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(19,___S_write_2d_to_2d_string))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(1048611))
+               ___VEC0
+___DEF_SUB_VEC(___X89,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(52))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(2097187))
+               ___VEC0
+___DEF_SUB_VEC(___X90,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(5,___S_eval))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(2162723))
+               ___VEC0
+___DEF_SUB_VEC(___X91,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(54))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(2490403))
+               ___VEC0
+___DEF_SUB_VEC(___X92,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(11,___S_read_2d_from_2d_string))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(2555939))
+               ___VEC0
+___DEF_SUB_VEC(___X93,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(13,___S_str))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(3670051))
+               ___VEC0
+___DEF_SUB_VEC(___X94,2)
+               ___VEC1(___REF_FIX(1))
+               ___VEC1(___REF_SUB(95))
+               ___VEC0
+___DEF_SUB_VEC(___X95,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(56))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262179))
+               ___VEC0
+___DEF_SUB_VEC(___X96,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(262179))
+               ___VEC0
+___DEF_SUB_VEC(___X97,2)
+               ___VEC1(___REF_FIX(2))
+               ___VEC1(___REF_SUB(95))
+               ___VEC0
+___DEF_SUB_VEC(___X98,2)
+               ___VEC1(___REF_FIX(3))
+               ___VEC1(___REF_SUB(95))
+               ___VEC0
+___DEF_SUB_VEC(___X99,2)
+               ___VEC1(___REF_FIX(4))
+               ___VEC1(___REF_SUB(91))
+               ___VEC0
+___DEF_SUB_VEC(___X100,2)
+               ___VEC1(___REF_FIX(5))
+               ___VEC1(___REF_SUB(91))
+               ___VEC0
+___DEF_SUB_VEC(___X101,2)
+               ___VEC1(___REF_FIX(6))
+               ___VEC1(___REF_SUB(89))
+               ___VEC0
+___DEF_SUB_VEC(___X102,2)
+               ___VEC1(___REF_FIX(7))
+               ___VEC1(___REF_SUB(87))
+               ___VEC0
+___DEF_SUB_VEC(___X103,0)
+               ___VEC0
+___DEF_SUB_VEC(___X104,2)
+               ___VEC1(___REF_SUB(105))
+               ___VEC1(___REF_SUB(115))
+               ___VEC0
+___DEF_SUB_VEC(___X105,2)
+               ___VEC1(___REF_SUB(106))
+               ___VEC1(___REF_SUB(114))
+               ___VEC0
+___DEF_SUB_VEC(___X106,2)
+               ___VEC1(___REF_FIX(0))
+               ___VEC1(___REF_SUB(107))
+               ___VEC0
+___DEF_SUB_VEC(___X107,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(57))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(41))
+               ___VEC0
+___DEF_SUB_VEC(___X108,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(1,___S__23__23_lambda))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(41))
+               ___VEC0
+___DEF_SUB_VEC(___X109,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_NUL)
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(41))
+               ___VEC0
+___DEF_SUB_VEC(___X110,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SUB(111))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(3407913))
+               ___VEC0
+___DEF_SUB_STR(___X111,6)
+               ___STR6(101,120,116,101,114,110)
+___DEF_SUB_VEC(___X112,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_CNS(61))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(3997737))
+               ___VEC0
+___DEF_SUB_VEC(___X113,4)
+               ___VEC1(___REF_SUB(4))
+               ___VEC1(___REF_SYM(3,___S__23__23_repl_2d_debug_2d_main))
+               ___VEC1(___REF_SUB(6))
+               ___VEC1(___REF_FIX(4063273))
+               ___VEC0
+___DEF_SUB_VEC(___X114,2)
+               ___VEC1(___REF_FIX(1))
+               ___VEC1(___REF_SUB(107))
+               ___VEC0
+___DEF_SUB_VEC(___X115,0)
+               ___VEC0
+
+___BEGIN_SUB
+ ___DEF_SUB(___X0)
+,___DEF_SUB(___X1)
+,___DEF_SUB(___X2)
+,___DEF_SUB(___X3)
+,___DEF_SUB(___X4)
+,___DEF_SUB(___X5)
+,___DEF_SUB(___X6)
+,___DEF_SUB(___X7)
+,___DEF_SUB(___X8)
+,___DEF_SUB(___X9)
+,___DEF_SUB(___X10)
+,___DEF_SUB(___X11)
+,___DEF_SUB(___X12)
+,___DEF_SUB(___X13)
+,___DEF_SUB(___X14)
+,___DEF_SUB(___X15)
+,___DEF_SUB(___X16)
+,___DEF_SUB(___X17)
+,___DEF_SUB(___X18)
+,___DEF_SUB(___X19)
+,___DEF_SUB(___X20)
+,___DEF_SUB(___X21)
+,___DEF_SUB(___X22)
+,___DEF_SUB(___X23)
+,___DEF_SUB(___X24)
+,___DEF_SUB(___X25)
+,___DEF_SUB(___X26)
+,___DEF_SUB(___X27)
+,___DEF_SUB(___X28)
+,___DEF_SUB(___X29)
+,___DEF_SUB(___X30)
+,___DEF_SUB(___X31)
+,___DEF_SUB(___X32)
+,___DEF_SUB(___X33)
+,___DEF_SUB(___X34)
+,___DEF_SUB(___X35)
+,___DEF_SUB(___X36)
+,___DEF_SUB(___X37)
+,___DEF_SUB(___X38)
+,___DEF_SUB(___X39)
+,___DEF_SUB(___X40)
+,___DEF_SUB(___X41)
+,___DEF_SUB(___X42)
+,___DEF_SUB(___X43)
+,___DEF_SUB(___X44)
+,___DEF_SUB(___X45)
+,___DEF_SUB(___X46)
+,___DEF_SUB(___X47)
+,___DEF_SUB(___X48)
+,___DEF_SUB(___X49)
+,___DEF_SUB(___X50)
+,___DEF_SUB(___X51)
+,___DEF_SUB(___X52)
+,___DEF_SUB(___X53)
+,___DEF_SUB(___X54)
+,___DEF_SUB(___X55)
+,___DEF_SUB(___X56)
+,___DEF_SUB(___X57)
+,___DEF_SUB(___X58)
+,___DEF_SUB(___X59)
+,___DEF_SUB(___X60)
+,___DEF_SUB(___X61)
+,___DEF_SUB(___X62)
+,___DEF_SUB(___X63)
+,___DEF_SUB(___X64)
+,___DEF_SUB(___X65)
+,___DEF_SUB(___X66)
+,___DEF_SUB(___X67)
+,___DEF_SUB(___X68)
+,___DEF_SUB(___X69)
+,___DEF_SUB(___X70)
+,___DEF_SUB(___X71)
+,___DEF_SUB(___X72)
+,___DEF_SUB(___X73)
+,___DEF_SUB(___X74)
+,___DEF_SUB(___X75)
+,___DEF_SUB(___X76)
+,___DEF_SUB(___X77)
+,___DEF_SUB(___X78)
+,___DEF_SUB(___X79)
+,___DEF_SUB(___X80)
+,___DEF_SUB(___X81)
+,___DEF_SUB(___X82)
+,___DEF_SUB(___X83)
+,___DEF_SUB(___X84)
+,___DEF_SUB(___X85)
+,___DEF_SUB(___X86)
+,___DEF_SUB(___X87)
+,___DEF_SUB(___X88)
+,___DEF_SUB(___X89)
+,___DEF_SUB(___X90)
+,___DEF_SUB(___X91)
+,___DEF_SUB(___X92)
+,___DEF_SUB(___X93)
+,___DEF_SUB(___X94)
+,___DEF_SUB(___X95)
+,___DEF_SUB(___X96)
+,___DEF_SUB(___X97)
+,___DEF_SUB(___X98)
+,___DEF_SUB(___X99)
+,___DEF_SUB(___X100)
+,___DEF_SUB(___X101)
+,___DEF_SUB(___X102)
+,___DEF_SUB(___X103)
+,___DEF_SUB(___X104)
+,___DEF_SUB(___X105)
+,___DEF_SUB(___X106)
+,___DEF_SUB(___X107)
+,___DEF_SUB(___X108)
+,___DEF_SUB(___X109)
+,___DEF_SUB(___X110)
+,___DEF_SUB(___X111)
+,___DEF_SUB(___X112)
+,___DEF_SUB(___X113)
+,___DEF_SUB(___X114)
+,___DEF_SUB(___X115)
+___END_SUB
+
+
+#define ___C_LBL_scm_eval_string 17
+#define ___C_LBL_scm_start_repl 26
+
+extern char* scm_eval_string ___P((char* ___arg1),(___arg1)
+char* ___arg1;)
+{
+#define ___NARGS 1
+___BEGIN_SFUN(___MLBL(___C_LBL_scm_eval_string),char* ___result)
+___BEGIN_SFUN_ARG(1,___ARG1)
+___BEGIN_SFUN_CHARSTRING_TO_SCMOBJ(___arg1,___ARG1,1)
+___BEGIN_SFUN_BODY
+___SFUN_ARG(1,___ARG1)
+___SFUN_CALL
+___BEGIN_SFUN_SCMOBJ_TO_CHARSTRING(___SFUN_RESULT,___result)
+___SFUN_SET_RESULT
+___END_SFUN_SCMOBJ_TO_CHARSTRING(___SFUN_RESULT,___result)
+___END_SFUN_BODY
+___END_SFUN_CHARSTRING_TO_SCMOBJ(___arg1,___ARG1,1)
+___END_SFUN_ARG(1)
+___SFUN_ERROR
+___BEGIN_SFUN_SCMOBJ_TO_CHARSTRING(___SFUN_RESULT,___result)
+___SFUN_SET_RESULT
+___END_SFUN_SCMOBJ_TO_CHARSTRING(___SFUN_RESULT,___result)
+___END_SFUN
+return ___result;
+#undef ___NARGS
+}
+
+extern void scm_start_repl ___PVOID
+{
+#define ___NARGS 0
+___BEGIN_SFUN_VOID(___MLBL(___C_LBL_scm_start_repl))
+___BEGIN_SFUN_BODY
+___SFUN_CALL_VOID
+___SFUN_SET_RESULT_VOID
+___END_SFUN_BODY
+___SFUN_ERROR_VOID
+___SFUN_SET_RESULT_VOID
+___END_SFUN_VOID
+#undef ___NARGS
+}
+
+
+#undef ___MD_ALL
+#define ___MD_ALL ___D_HEAP ___D_FP ___D_R0 ___D_R1 ___D_R2 ___D_R4
+#undef ___MR_ALL
+#define ___MR_ALL ___R_HEAP ___R_FP ___R_R0 ___R_R1 ___R_R2 ___R_R4
+#undef ___MW_ALL
+#define ___MW_ALL ___W_HEAP ___W_FP ___W_R0 ___W_R1 ___W_R2 ___W_R4
+___BEGIN_M_COD
+___BEGIN_M_HLBL
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0__20_ScmEval)
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0_catch_2d_all_2d_errors)
+___DEF_M_HLBL(___L1_catch_2d_all_2d_errors)
+___DEF_M_HLBL(___L2_catch_2d_all_2d_errors)
+___DEF_M_HLBL(___L3_catch_2d_all_2d_errors)
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0_write_2d_to_2d_string)
+___DEF_M_HLBL(___L1_write_2d_to_2d_string)
+___DEF_M_HLBL(___L2_write_2d_to_2d_string)
+___DEF_M_HLBL(___L3_write_2d_to_2d_string)
+___DEF_M_HLBL(___L4_write_2d_to_2d_string)
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0_read_2d_from_2d_string)
+___DEF_M_HLBL(___L1_read_2d_from_2d_string)
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L1_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L2_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L3_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L4_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L5_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L6_scm_2d_eval_2d_string)
+___DEF_M_HLBL(___L7_scm_2d_eval_2d_string)
+___DEF_M_HLBL_INTRO
+___DEF_M_HLBL(___L0_scm_2d_start_2d_repl)
+___DEF_M_HLBL(___L1_scm_2d_start_2d_repl)
+___END_M_HLBL
+
+___BEGIN_M_SW
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H__20_ScmEval
+#undef ___PH_LBL0
+#define ___PH_LBL0 1
+#undef ___PD_ALL
+#define ___PD_ALL ___D_R0 ___D_R1
+#undef ___PR_ALL
+#define ___PR_ALL ___R_R0 ___R_R1
+#undef ___PW_ALL
+#define ___PW_ALL ___W_R1
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0__20_ScmEval)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0__20_ScmEval)
+   ___IF_NARGS_EQ(0,___NOTHING)
+   ___WRONG_NARGS(0,0,0,0)
+___DEF_GLBL(___L__20_ScmEval)
+   ___SET_GLO(1,___G_catch_2d_all_2d_errors,___PRC(3))
+   ___SET_GLO(5,___G_write_2d_to_2d_string,___PRC(8))
+   ___SET_GLO(2,___G_read_2d_from_2d_string,___PRC(14))
+   ___SET_GLO(3,___G_scm_2d_eval_2d_string,___PRC(17))
+   ___SET_GLO(4,___G_scm_2d_start_2d_repl,___PRC(26))
+   ___SET_R1(___VOID)
+   ___JUMPPRM(___NOTHING,___R0)
+___END_P_SW
+___END_P_COD
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H_catch_2d_all_2d_errors
+#undef ___PH_LBL0
+#define ___PH_LBL0 3
+#undef ___PD_ALL
+#define ___PD_ALL ___D_FP ___D_R1 ___D_R2 ___D_R4
+#undef ___PR_ALL
+#define ___PR_ALL ___R_FP ___R_R1 ___R_R2 ___R_R4
+#undef ___PW_ALL
+#define ___PW_ALL ___W_FP ___W_R1 ___W_R2 ___W_R4
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0_catch_2d_all_2d_errors)
+___DEF_P_HLBL(___L1_catch_2d_all_2d_errors)
+___DEF_P_HLBL(___L2_catch_2d_all_2d_errors)
+___DEF_P_HLBL(___L3_catch_2d_all_2d_errors)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0_catch_2d_all_2d_errors)
+   ___IF_NARGS_EQ(1,___NOTHING)
+   ___WRONG_NARGS(0,1,0,0)
+___DEF_GLBL(___L_catch_2d_all_2d_errors)
+   ___SET_STK(1,___R1)
+   ___SET_R1(___LBL(2))
+   ___SET_R2(___STK(1))
+   ___ADJFP(1)
+   ___POLL(1)
+___DEF_SLBL(1,___L1_catch_2d_all_2d_errors)
+   ___ADJFP(-1)
+   ___JUMPGLOSAFE(___SET_NARGS(2),9,___G_with_2d_exception_2d_catcher)
+___DEF_SLBL(2,___L2_catch_2d_all_2d_errors)
+   ___IF_NARGS_EQ(1,___NOTHING)
+   ___WRONG_NARGS(2,1,0,0)
+   ___POLL(3)
+___DEF_SLBL(3,___L3_catch_2d_all_2d_errors)
+   ___JUMPGLOSAFE(___SET_NARGS(1),5,___G_write_2d_to_2d_string)
+___END_P_SW
+___END_P_COD
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H_write_2d_to_2d_string
+#undef ___PH_LBL0
+#define ___PH_LBL0 8
+#undef ___PD_ALL
+#define ___PD_ALL ___D_HEAP ___D_FP ___D_R1 ___D_R2 ___D_R4
+#undef ___PR_ALL
+#define ___PR_ALL ___R_HEAP ___R_FP ___R_R1 ___R_R2 ___R_R4
+#undef ___PW_ALL
+#define ___PW_ALL ___W_HEAP ___W_FP ___W_R1 ___W_R2 ___W_R4
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0_write_2d_to_2d_string)
+___DEF_P_HLBL(___L1_write_2d_to_2d_string)
+___DEF_P_HLBL(___L2_write_2d_to_2d_string)
+___DEF_P_HLBL(___L3_write_2d_to_2d_string)
+___DEF_P_HLBL(___L4_write_2d_to_2d_string)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0_write_2d_to_2d_string)
+   ___IF_NARGS_EQ(1,___NOTHING)
+   ___WRONG_NARGS(0,1,0,0)
+___DEF_GLBL(___L_write_2d_to_2d_string)
+   ___SET_STK(1,___ALLOC_CLO(1))
+   ___BEGIN_SETUP_CLO(1,___STK(1),3)
+   ___ADD_CLO_ELEM(0,___R1)
+   ___END_SETUP_CLO(1)
+   ___SET_R2(___STK(1))
+   ___SET_R1(___NUL)
+   ___ADJFP(1)
+   ___CHECK_HEAP(1,4096)
+___DEF_SLBL(1,___L1_write_2d_to_2d_string)
+   ___POLL(2)
+___DEF_SLBL(2,___L2_write_2d_to_2d_string)
+   ___ADJFP(-1)
+   ___JUMPGLOSAFE(___SET_NARGS(2),11,___G_with_2d_output_2d_to_2d_string)
+___DEF_SLBL(3,___L3_write_2d_to_2d_string)
+   ___IF_NARGS_EQ(0,___NOTHING)
+   ___WRONG_NARGS(3,0,0,0)
+   ___SET_R1(___CLO(___R4,1))
+   ___POLL(4)
+___DEF_SLBL(4,___L4_write_2d_to_2d_string)
+   ___JUMPGLOSAFE(___SET_NARGS(1),12,___G_write)
+___END_P_SW
+___END_P_COD
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H_read_2d_from_2d_string
+#undef ___PH_LBL0
+#define ___PH_LBL0 14
+#undef ___PD_ALL
+#define ___PD_ALL ___D_FP ___D_R2 ___D_R4
+#undef ___PR_ALL
+#define ___PR_ALL ___R_FP ___R_R2 ___R_R4
+#undef ___PW_ALL
+#define ___PW_ALL ___W_R2 ___W_R4
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0_read_2d_from_2d_string)
+___DEF_P_HLBL(___L1_read_2d_from_2d_string)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0_read_2d_from_2d_string)
+   ___IF_NARGS_EQ(1,___NOTHING)
+   ___WRONG_NARGS(0,1,0,0)
+___DEF_GLBL(___L_read_2d_from_2d_string)
+   ___SET_R2(___GLO(8,___G_read))
+   ___POLL(1)
+___DEF_SLBL(1,___L1_read_2d_from_2d_string)
+   ___JUMPGLOSAFE(___SET_NARGS(2),10,___G_with_2d_input_2d_from_2d_string)
+___END_P_SW
+___END_P_COD
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H_scm_2d_eval_2d_string
+#undef ___PH_LBL0
+#define ___PH_LBL0 17
+#undef ___PD_ALL
+#define ___PD_ALL ___D_HEAP ___D_FP ___D_R0 ___D_R1 ___D_R4
+#undef ___PR_ALL
+#define ___PR_ALL ___R_HEAP ___R_FP ___R_R0 ___R_R1 ___R_R4
+#undef ___PW_ALL
+#define ___PW_ALL ___W_HEAP ___W_FP ___W_R0 ___W_R1 ___W_R4
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L1_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L2_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L3_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L4_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L5_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L6_scm_2d_eval_2d_string)
+___DEF_P_HLBL(___L7_scm_2d_eval_2d_string)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0_scm_2d_eval_2d_string)
+   ___IF_NARGS_EQ(1,___NOTHING)
+   ___WRONG_NARGS(0,1,0,0)
+___DEF_GLBL(___L_scm_2d_eval_2d_string)
+   ___SET_STK(1,___ALLOC_CLO(1))
+   ___BEGIN_SETUP_CLO(1,___STK(1),3)
+   ___ADD_CLO_ELEM(0,___R1)
+   ___END_SETUP_CLO(1)
+   ___SET_R1(___STK(1))
+   ___ADJFP(1)
+   ___CHECK_HEAP(1,4096)
+___DEF_SLBL(1,___L1_scm_2d_eval_2d_string)
+   ___POLL(2)
+___DEF_SLBL(2,___L2_scm_2d_eval_2d_string)
+   ___ADJFP(-1)
+   ___JUMPGLOSAFE(___SET_NARGS(1),1,___G_catch_2d_all_2d_errors)
+___DEF_SLBL(3,___L3_scm_2d_eval_2d_string)
+   ___IF_NARGS_EQ(0,___NOTHING)
+   ___WRONG_NARGS(3,0,0,0)
+   ___SET_STK(1,___R0)
+   ___SET_R1(___CLO(___R4,1))
+   ___SET_R0(___LBL(5))
+   ___ADJFP(4)
+   ___POLL(4)
+___DEF_SLBL(4,___L4_scm_2d_eval_2d_string)
+   ___JUMPGLOSAFE(___SET_NARGS(1),2,___G_read_2d_from_2d_string)
+___DEF_SLBL(5,___L5_scm_2d_eval_2d_string)
+   ___SET_R0(___LBL(6))
+   ___JUMPGLOSAFE(___SET_NARGS(1),7,___G_eval)
+___DEF_SLBL(6,___L6_scm_2d_eval_2d_string)
+   ___SET_R0(___STK(-3))
+   ___POLL(7)
+___DEF_SLBL(7,___L7_scm_2d_eval_2d_string)
+   ___ADJFP(-4)
+   ___JUMPGLOSAFE(___SET_NARGS(1),5,___G_write_2d_to_2d_string)
+___END_P_SW
+___END_P_COD
+
+#undef ___PH_PROC
+#define ___PH_PROC ___H_scm_2d_start_2d_repl
+#undef ___PH_LBL0
+#define ___PH_LBL0 26
+#undef ___PD_ALL
+#define ___PD_ALL ___D_FP ___D_R4
+#undef ___PR_ALL
+#define ___PR_ALL ___R_FP ___R_R4
+#undef ___PW_ALL
+#define ___PW_ALL ___W_R4
+___BEGIN_P_COD
+___BEGIN_P_HLBL
+___DEF_P_HLBL_INTRO
+___DEF_P_HLBL(___L0_scm_2d_start_2d_repl)
+___DEF_P_HLBL(___L1_scm_2d_start_2d_repl)
+___END_P_HLBL
+___BEGIN_P_SW
+___DEF_SLBL(0,___L0_scm_2d_start_2d_repl)
+   ___IF_NARGS_EQ(0,___NOTHING)
+   ___WRONG_NARGS(0,0,0,0)
+___DEF_GLBL(___L_scm_2d_start_2d_repl)
+   ___POLL(1)
+___DEF_SLBL(1,___L1_scm_2d_start_2d_repl)
+   ___JUMPGLOSAFE(___SET_NARGS(0),6,___G__23__23_repl_2d_debug_2d_main)
+___END_P_SW
+___END_P_COD
+
+___END_M_SW
+___END_M_COD
+
+___BEGIN_LBL
+ ___DEF_LBL_INTRO(___H__20_ScmEval," ScmEval",___REF_SUB(0),1,0)
+,___DEF_LBL_PROC(___H__20_ScmEval,0,0)
+,___DEF_LBL_INTRO(___H_catch_2d_all_2d_errors,0,___REF_SUB(21),4,0)
+,___DEF_LBL_PROC(___H_catch_2d_all_2d_errors,1,0)
+,___DEF_LBL_RET(___H_catch_2d_all_2d_errors,___IFD(___RETI,1,4,0x3f0L))
+,___DEF_LBL_PROC(___H_catch_2d_all_2d_errors,1,0)
+,___DEF_LBL_RET(___H_catch_2d_all_2d_errors,___IFD(___RETI,0,0,0x3fL))
+,___DEF_LBL_INTRO(___H_write_2d_to_2d_string,0,___REF_SUB(33),5,0)
+,___DEF_LBL_PROC(___H_write_2d_to_2d_string,1,0)
+,___DEF_LBL_RET(___H_write_2d_to_2d_string,___IFD(___RETI,1,4,0x3f0L))
+,___DEF_LBL_RET(___H_write_2d_to_2d_string,___IFD(___RETI,1,4,0x3f0L))
+,___DEF_LBL_PROC(___H_write_2d_to_2d_string,0,1)
+,___DEF_LBL_RET(___H_write_2d_to_2d_string,___IFD(___RETI,0,0,0x3fL))
+,___DEF_LBL_INTRO(___H_read_2d_from_2d_string,0,___REF_SUB(60),2,0)
+,___DEF_LBL_PROC(___H_read_2d_from_2d_string,1,0)
+,___DEF_LBL_RET(___H_read_2d_from_2d_string,___IFD(___RETI,0,0,0x3fL))
+,___DEF_LBL_INTRO(___H_scm_2d_eval_2d_string,0,___REF_SUB(73),8,scm_eval_string)
+,___DEF_LBL_PROC(___H_scm_2d_eval_2d_string,1,0)
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETI,1,4,0x3f0L))
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETI,1,4,0x3f0L))
+,___DEF_LBL_PROC(___H_scm_2d_eval_2d_string,0,1)
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETI,4,0,0x3f1L))
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETN,1,0,0x1L))
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETN,1,0,0x1L))
+,___DEF_LBL_RET(___H_scm_2d_eval_2d_string,___IFD(___RETI,4,4,0x3f0L))
+,___DEF_LBL_INTRO(___H_scm_2d_start_2d_repl,0,___REF_SUB(104),2,scm_start_repl)
+,___DEF_LBL_PROC(___H_scm_2d_start_2d_repl,0,0)
+,___DEF_LBL_RET(___H_scm_2d_start_2d_repl,___IFD(___RETI,0,0,0x3fL))
+___END_LBL
+
+___BEGIN_MOD1
+___DEF_PRM(0,___G__20_ScmEval,1)
+___END_MOD1
+
+___BEGIN_MOD2
+___DEF_SYM2(0,___S__23__23_define,"##define")
+___DEF_SYM2(1,___S__23__23_lambda,"##lambda")
+___DEF_SYM2(2,___S__23__23_quote,"##quote")
+___DEF_SYM2(3,___S__23__23_repl_2d_debug_2d_main,"##repl-debug-main")
+___DEF_SYM2(4,___S_catch_2d_all_2d_errors,"catch-all-errors")
+___DEF_SYM2(5,___S_eval,"eval")
+___DEF_SYM2(6,___S_exc,"exc")
+___DEF_SYM2(7,___S_lambda,"lambda")
+___DEF_SYM2(8,___S_obj,"obj")
+___DEF_SYM2(9,___S_quote,"quote")
+___DEF_SYM2(10,___S_read,"read")
+___DEF_SYM2(11,___S_read_2d_from_2d_string,"read-from-string")
+___DEF_SYM2(12,___S_source1,"source1")
+___DEF_SYM2(13,___S_str,"str")
+___DEF_SYM2(14,___S_thunk,"thunk")
+___DEF_SYM2(15,___S_with_2d_exception_2d_catcher,"with-exception-catcher")
+___DEF_SYM2(16,___S_with_2d_input_2d_from_2d_string,"with-input-from-string")
+___DEF_SYM2(17,___S_with_2d_output_2d_to_2d_string,"with-output-to-string")
+___DEF_SYM2(18,___S_write,"write")
+___DEF_SYM2(19,___S_write_2d_to_2d_string,"write-to-string")
+___END_MOD2
+
+#endif

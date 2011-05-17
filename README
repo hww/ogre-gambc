@@ -1,0 +1,32 @@
+## Intro
+
+The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language.
+
+    http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page
+
+This project is not a complette ogre to gambit-c binding. It is just an example how to complie the ogre with the scheme REPL
+
+## Requirements
+
+First install required files with scripts/install-required.sh
+
+Set the environment var OGRE_HOME to the root of this project.After building there will be created bin, lib, include, share, info. 
+
+Look at the example of my .bashrc file
+
+     export OGRE_HOME=/home/valery/projects/ogre-gambc
+     export PATH=:$OGRE_HOME/bin:$PATH
+
+You need also make the symbolic link '/planet' to the $OGRE_HOME folder. Then add to /etc/ld.so.conf the line /planet/lib, and then make `sudo ldconfig`. Look inside scripts/install.sh to see an example.
+
+You need to download in build the next livraries in exact same order.
+
+OIS 1.3
+Boost 1.42
+Ogre 1.72
+Gambit-C 4.6.0
+
+The src folder has single folder for each of those libraries. Drop archives inside those folders. Each of that folders has a script build.sh wich will build and install the  library.
+
+## License
+
