@@ -1,8 +1,12 @@
 * Introduction
 
 The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language. Read more here [[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page][Gambit-C Wiki]]
+
 The OGRE (Object-Oriented Graphics Rendering Engine) is a scene-oriented, flexible 3D rendering engine [[http://www.ogre3d.org/][Ogre Website]]
-This project is not a complette ogre to gambit-c binding. It is just an example how to complie the Ogre3D with the scheme REPL
+
+This project is not a complette ogre to gambit-c binding. It is just an example how to complie the Ogre3D with the scheme REPL. 
+
+What it does? It has console's overlay with REPL. Nothing else. But The rest of wrapper can be added easily because Gambit-C has a good C-interface. 
 
 * Requirements
 
