@@ -18,20 +18,26 @@ This project is not a complette ogre to gambit-c binding. It is just an example 
 
    After building there will be created: bin, lib, include, share, info. Look at the example of my .bashrc file
 
+#+BEGIN_SRC bash
    export OGRE_HOME=/home/valery/projects/ogre-gambc
 
    export PATH=:$OGRE_HOME/bin:$PATH
+#+END_SRC
 
 3. Make the symbolic link '/planet' to the $OGRE_HOME folder. 
 
+#+BEGIN_SRC bash
    $ cd /
    $ sudo ln -s <path to project> planet
    $ sudo chown <your user name> planet
+#+END_SRC
 
 4. Add to /etc/ld.so.conf the line /planet/lib
 
+#+BEGIN_SRC bash
    $ sudo echo "/planet/lib" >> /etc/ld.so.conf
    $ sudo ldconfig
+#+END_SRC
 
    Look inside scripts/install.sh to see an example.
 
@@ -46,20 +52,25 @@ This project is not a complette ogre to gambit-c binding. It is just an example 
 
    The src folder has single folder for each of those libraries. Drop archives inside those folders. Each of that folders has a script build.sh wich will build and install the  library.
 
+#+BEGIN_SRC bash
    $ cd src/ois
    $ ./build
-   ...
+#+END_SRC
 
 6. Build the ogre-gambc application
 
+#+BEGIN_SRC bash
    $ cd src/ogre-gambc
    $ make
    $ ./game
+#+END_SRC
 
    When application will run hit the key ` to see shell. Type and hit enter:
 
+#+BEGIN_SRC scheme
    > (+ 1 2)
    > 3
+#+END_SRC
 
 * License
 
