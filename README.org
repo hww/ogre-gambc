@@ -8,18 +8,18 @@ This project is not a complette ogre to gambit-c binding. It is just an example 
 
 1. Install required files with
 
-#+BEGIN_SRC bash
+   #+BEGIN_SRC bash
    $ scripts/install-required.sh
-#+END_SRC
+   #+END_SRC
 
 2. Set the environment var OGRE_HOME to the root of this project. 
 
    After building there will be created: bin, lib, include, share, info. Look at the example of my .bashrc file
 
-#+BEGIN_SRC bash
+   #+BEGIN_SRC bash
    export OGRE_HOME=/home/valery/projects/ogre-gambc
    export PATH=:$OGRE_HOME/bin:$PATH
-#+END_SRC
+   #+END_SRC
    
    Or it can be more simple because next step will create symbolic link to OGRE_HOME
 
