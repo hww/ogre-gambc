@@ -1,4 +1,4 @@
-# GambitC with ORGE Engine 
+# GambitC Compiler with OGRE Rendering Engine 
 
 ## Introduction
 
