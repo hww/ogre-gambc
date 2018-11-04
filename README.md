@@ -97,6 +97,4 @@ When application will run hit the key ` to see shell. Type and hit enter:
 
 ![Screen Shot](/ScreenShot.png)
 
-## License
 
-  
