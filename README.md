@@ -1,4 +1,4 @@
-# Scheme compiler GambitC with ORGE Engine 
+# GambitC with ORGE Engine 
 
 ## Introduction
 
