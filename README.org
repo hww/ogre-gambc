@@ -82,7 +82,7 @@ What it does? It has console's overlay with REPL. Nothing else. But The rest of 
    > 3
 #+END_SRC
 
-   Look at the [[https://github.com/hww/ogre-gambc/blob/master/ScreenShot.png][Screen Shoot]]
+![[https://github.com/hww/ogre-gambc/blob/master/ScreenShot.png][Screen Shoot]]
 
 * License
 
