@@ -1,4 +1,4 @@
-* Introduction
+$ Introduction
 
 The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language. Read more here [[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page][Gambit-C Wiki]]
 
@@ -8,50 +8,50 @@ This project is not a complette ogre to gambit-c binding. It is just an example 
 
 What it does? It has console's overlay with REPL. Nothing else. But The rest of wrapper can be added easily because Gambit-C has a good C-interface. 
 
-* Requirements
+# Requirements
 
-1 - Install required files with
+**Step 1** Install required files with
 
-   #+BEGIN_SRC bash
+```bash
    $ scripts/install-required.sh
-   #+END_SRC
+```
 
-2 - Set the environment var OGRE_HOME to the root of this project. 
+**Step 2** Set the environment var OGRE_HOME to the root of this project. 
 
-   After building there will be created: bin, lib, include, share, info. Look at the example of my .bashrc file
+After building there will be created: bin, lib, include, share, info. Look at the example of my .bashrc file
 
-#+BEGIN_SRC bash
+```bash
    export OGRE_HOME=/home/valery/projects/ogre-gambc
    export PATH=:$OGRE_HOME/bin:$PATH
-#+END_SRC
+```
    
-   Or it can be more simple because next step will create symbolic link to OGRE_HOME
+Or it can be more simple because next step will create symbolic link to OGRE_HOME
 
-#+BEGIN_SRC bash
+```bash
    export OGRE_HOME=/planet
    export PATH=:$OGRE_HOME/bin:$PATH
-#+END_SRC
+```
 
-3 - Make the symbolic link '/planet' to the $OGRE_HOME folder. 
+**Step 3** Make the symbolic link '/planet' to the $OGRE_HOME folder. 
 
-#+BEGIN_SRC bash
+```bash
    $ cd /
    $ sudo ln -s <path to project> planet
    $ sudo chown <your user name> planet
-#+END_SRC
+```
 
-   Note! The symbolic link required because it makes possible reffer to the project folder from places which does not support access to the environment vars.
+Note! The symbolic link required because it makes possible reffer to the project folder from places which does not support access to the environment vars.
 
-4 - Add to /etc/ld.so.conf the line /planet/lib
+**Step 4** Add to /etc/ld.so.conf the line /planet/lib
 
-#+BEGIN_SRC bash
+```bash
    $ sudo echo "/planet/lib" >> /etc/ld.so.conf
    $ sudo ldconfig
-#+END_SRC
+```
 
    Look inside scripts/install.sh to see an example.
 
-5 - Download in build the next libraries in exact same order.
+**Step 5** Download in build the next libraries in exact same order.
 
    |----------+-------|
    | OIS      |   1.3 |
@@ -62,25 +62,25 @@ What it does? It has console's overlay with REPL. Nothing else. But The rest of 
 
    The src folder has single folder for each of those libraries. Drop archives inside those folders. Each of that folders has a script build.sh wich will build and install the  library.
 
-#+BEGIN_SRC bash
+```bash
    $ cd src/ois
    $ ./build
-#+END_SRC
+```
 
-6 - Build the ogre-gambc application
+**Step 6** Build the ogre-gambc application
 
-#+BEGIN_SRC bash
+```bash
    $ cd src/ogre-gambc
    $ make
    $ ./game
-#+END_SRC
+```
 
    When application will run hit the key ` to see shell. Type and hit enter:
 
-#+BEGIN_SRC scheme
+```scheme
    > (+ 1 2)
    > 3
-#+END_SRC
+```
 
 ![Screen Shot](/ScreenShot.png)
 
