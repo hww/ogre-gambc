@@ -64,12 +64,12 @@ Add to /etc/ld.so.conf the line /planet/lib
 **Step 5** Download in build the next libraries in exact same order.
 
 
+   | Library | Version |
    |----------|-------|
    | OIS      |   1.3 |
    | Boost    |  1.42 |
    | Ogre     |  1.72 |
    | Gambit-C | 4.6.0 |
-   |----------+-------|
 
    The src folder has single folder for each of those libraries. Drop archives inside those folders. Each of that folders has a script build.sh wich will build and install the  library.
 
