@@ -1,4 +1,6 @@
-$ Introduction
+# Scheme compiler GambitC with ORGE Engine 
+
+## Introduction
 
 The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language. Read more here [[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page][Gambit-C Wiki]]
 
@@ -8,15 +10,19 @@ This project is not a complette ogre to gambit-c binding. It is just an example 
 
 What it does? It has console's overlay with REPL. Nothing else. But The rest of wrapper can be added easily because Gambit-C has a good C-interface. 
 
-# Requirements
+## Requirements
 
-**Step 1** Install required files with
+**Step 1** 
+
+Install required files with
 
 ```bash
    $ scripts/install-required.sh
 ```
 
-**Step 2** Set the environment var OGRE_HOME to the root of this project. 
+**Step 2** 
+
+Set the environment var OGRE_HOME to the root of this project. 
 
 After building there will be created: bin, lib, include, share, info. Look at the example of my .bashrc file
 
@@ -32,7 +38,9 @@ Or it can be more simple because next step will create symbolic link to OGRE_HOM
    export PATH=:$OGRE_HOME/bin:$PATH
 ```
 
-**Step 3** Make the symbolic link '/planet' to the $OGRE_HOME folder. 
+**Step 3** 
+
+Make the symbolic link '/planet' to the $OGRE_HOME folder. 
 
 ```bash
    $ cd /
@@ -42,7 +50,9 @@ Or it can be more simple because next step will create symbolic link to OGRE_HOM
 
 Note! The symbolic link required because it makes possible reffer to the project folder from places which does not support access to the environment vars.
 
-**Step 4** Add to /etc/ld.so.conf the line /planet/lib
+**Step 4** 
+
+Add to /etc/ld.so.conf the line /planet/lib
 
 ```bash
    $ sudo echo "/planet/lib" >> /etc/ld.so.conf
@@ -67,7 +77,9 @@ Note! The symbolic link required because it makes possible reffer to the project
    $ ./build
 ```
 
-**Step 6** Build the ogre-gambc application
+**Step 6** 
+
+Build the ogre-gambc application
 
 ```bash
    $ cd src/ogre-gambc
@@ -75,7 +87,7 @@ Note! The symbolic link required because it makes possible reffer to the project
    $ ./game
 ```
 
-   When application will run hit the key ` to see shell. Type and hit enter:
+When application will run hit the key ` to see shell. Type and hit enter:
 
 ```scheme
    > (+ 1 2)
@@ -84,6 +96,6 @@ Note! The symbolic link required because it makes possible reffer to the project
 
 ![Screen Shot](/ScreenShot.png)
 
-* License
+## License
 
   
