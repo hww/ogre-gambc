@@ -12,15 +12,15 @@ What it does? It has console's overlay with REPL. Nothing else. But The rest of 
 
 ## Requirements
 
-**Step 1** 
+### Step 1
 
-Install required files with
+Install required files with:
 
 ```bash
    $ scripts/install-required.sh
 ```
 
-**Step 2** 
+### Step 2
 
 Set the environment var OGRE_HOME to the root of this project. 
 
@@ -38,7 +38,7 @@ Or it can be more simple because next step will create symbolic link to OGRE_HOM
    export PATH=:$OGRE_HOME/bin:$PATH
 ```
 
-**Step 3** 
+### Step 3
 
 Make the symbolic link '/planet' to the $OGRE_HOME folder. 
 
@@ -50,7 +50,7 @@ Make the symbolic link '/planet' to the $OGRE_HOME folder.
 
 Note! The symbolic link required because it makes possible reffer to the project folder from places which does not support access to the environment vars.
 
-**Step 4** 
+### Step 4
 
 Add to /etc/ld.so.conf the line /planet/lib
 
@@ -61,8 +61,9 @@ Add to /etc/ld.so.conf the line /planet/lib
 
    Look inside scripts/install.sh to see an example.
 
-**Step 5** Download in build the next libraries in exact same order.
+### Step 5
 
+Download in build the next libraries in exact same order.
 
    | Library | Version |
    |----------|-------|
@@ -78,7 +79,7 @@ Add to /etc/ld.so.conf the line /planet/lib
    $ ./build
 ```
 
-**Step 6** 
+### Step 6
 
 Build the ogre-gambc application
 
