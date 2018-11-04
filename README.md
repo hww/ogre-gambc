@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language. Read more here [[http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page][Gambit-C Wiki]]
+The Gambit Scheme system is a complete, portable, efficient and reliable implementation of the Scheme programming language. Read more here [Gambit-C Wiki](http://dynamo.iro.umontreal.ca/~gambit/wiki/index.php/Main_Page)
 
-The OGRE (Object-Oriented Graphics Rendering Engine) is a scene-oriented, flexible 3D rendering engine [[http://www.ogre3d.org/][Ogre Website]]
+The OGRE (Object-Oriented Graphics Rendering Engine) is a scene-oriented, flexible 3D rendering engine [Ogre Website](http://www.ogre3d.org/)
 
 This project is not a complette ogre to gambit-c binding. It is just an example how to complie the Ogre3D with the scheme REPL. 
 
@@ -63,7 +63,8 @@ Add to /etc/ld.so.conf the line /planet/lib
 
 **Step 5** Download in build the next libraries in exact same order.
 
-   |----------+-------|
+
+   |----------|-------|
    | OIS      |   1.3 |
    | Boost    |  1.42 |
    | Ogre     |  1.72 |
